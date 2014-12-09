@@ -52,13 +52,14 @@ class ClientesController extends \BaseController {
 	 * Display the specified resource.
 	 *
 	 * @param  int  $id
-	 * @return Response
+	 * @return clientes
 	 */
 	public function show($username)
 	{
 		//
 
         $cliente = Cliente::whereUsername($username)->fisrt();
+       // $cliente= Cliente::where('username','=',Input::get('email'))->first();
 
         return View::make('clientes.show', ['cliente' => $cliente]);
 	}

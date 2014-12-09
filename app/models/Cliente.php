@@ -11,6 +11,7 @@ class Cliente extends Eloquent implements UserInterface, RemindableInterface {
 
     public $timestamps = false;
 
+    protected $fillable = ['username', 'password'];
     /**
      * The database table used by the model.
      *
