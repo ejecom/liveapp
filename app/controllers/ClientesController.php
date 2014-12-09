@@ -24,6 +24,7 @@ class ClientesController extends \BaseController {
 	public function create()
 	{
 		//
+        return View::make('clientes.create');
 	}
 
 
@@ -35,6 +36,15 @@ class ClientesController extends \BaseController {
 	public function store()
 	{
 		//
+        $cliente = new Cliente;
+
+        $cliente->username = Input::get('username');
+
+        $cliente->password = Hash::make( Input::get('password'));
+
+        $cliente->save();
+
+        return Redirect::route('clientes.index');
 	}
 
 

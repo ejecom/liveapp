@@ -6,8 +6,11 @@
 
 <ul>
 @foreach($clientes as $cliente)
-    <li>{{link_to("/clientes/($cliente->username)")}}</li>
+    <li>{{link_to("/clientes/$cliente->username")}}</li>
  @endforeach
  </ul>
+
+
+<a href="/liveapp/public/clientes/create">Crear nuevo Usuario</a>
 
  @stop
