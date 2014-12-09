@@ -10,6 +10,9 @@ class ClientesController extends \BaseController {
 	public function index()
 	{
 		//
+        $clientes = Cliente::all();
+
+        return View::make('clientes.index', ['clientes' => $clientes]);
 	}
 
 
@@ -41,9 +44,13 @@ class ClientesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($username)
 	{
 		//
+
+        $cliente = Cliente::whereUsername($username)->fisrt();
+
+        return View::make('clientes.show', ['cliente' => $cliente]);
 	}
 
 
